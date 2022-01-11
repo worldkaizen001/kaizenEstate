@@ -123,7 +123,7 @@ Widget cardIconText(String? amen,IconData icon,) {
 }
 
 
-Widget fineCard(context, images, textName, city) {
+Widget fineCard(context, String? imageUrl, name, location, rating, price ) {
   return Container(
     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
     height: MediaQuery.of(context).size.height * 0.35,
@@ -139,7 +139,7 @@ Widget fineCard(context, images, textName, city) {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               image:  DecorationImage(
-                  image: AssetImage('images/$images.jpg'), fit: BoxFit.cover)),
+                  image: AssetImage('images/$imageUrl.jpg'), fit: BoxFit.cover)),
           child: Column(
             children: [
               Align(
@@ -155,15 +155,15 @@ Widget fineCard(context, images, textName, city) {
                     color: Colors.white,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(
+                      children:   [
+                        const Icon(
                           Icons.star,
                           color: Colors.yellow,
                           size: 15,
                         ),
                         kSizedBoxW5,
                         Text(
-                          '4.6',
+                          '$rating',
                           style: tinyBold,
                         )
                       ],
@@ -178,8 +178,8 @@ Widget fineCard(context, images, textName, city) {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             Text('$textName',
-              style: name,
+             Text('$name',
+              style: namingStyle,
             ),
             const SizedBox(
               height: 5,
@@ -192,8 +192,8 @@ Widget fineCard(context, images, textName, city) {
                   color: kGrey,
                 ),
                 Text(
-                  '$city',
-                  style: TextStyle(
+                  '$location',
+                  style: const TextStyle(
                       fontSize: 15, fontWeight: FontWeight.w500, color: kGrey),
                 ),
               ],
@@ -204,11 +204,11 @@ Widget fineCard(context, images, textName, city) {
 
 
             RichText(
-              text: const TextSpan(
-                  text: '\$27',
-                  style: nameAmount,
+              text:  TextSpan(
+                  text: '${price}',
+                  style: amountStyle ,
 
-                  children: <TextSpan>[
+                  children: const <TextSpan>[
                     TextSpan(
                         text: ' /Month',
                         style: TextStyle(fontWeight: FontWeight.w400,color: kAsh)),

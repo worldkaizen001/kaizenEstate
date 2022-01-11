@@ -8,8 +8,8 @@ const findBest = TextStyle(fontSize: 25,fontWeight: FontWeight.w700,color: kAsh)
 const boldText = TextStyle(fontSize: 30,fontWeight: FontWeight.w900,color: kBlack);
 const categories = TextStyle(fontSize: 19,fontWeight: FontWeight.w900,color: kBlack);
 const tinyBold = TextStyle(fontSize: 13,fontWeight: FontWeight.w900,color: kBlack);
-const name = TextStyle(fontSize: 16,fontWeight: FontWeight.w900,color: kBlack);
-const nameAmount = TextStyle(fontSize: 18,fontWeight: FontWeight.w900,color: kMain);
+const namingStyle = TextStyle(fontSize: 16,fontWeight: FontWeight.w900,color: kBlack);
+const amountStyle = TextStyle(fontSize: 18,fontWeight: FontWeight.w900,color: kMain);
 
 
 

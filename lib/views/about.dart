@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kaizen_estate/constant/colors.dart';
 import 'package:kaizen_estate/constant/sizedbox.dart';
 import 'package:kaizen_estate/constant/textstyles.dart';
+import 'package:kaizen_estate/model/rental_details.dart';
 import 'package:kaizen_estate/views/homepage.dart';
 import 'package:kaizen_estate/views/tour_screen.dart';
 import 'package:kaizen_estate/views/video_call.dart';
@@ -10,7 +11,9 @@ import 'package:kaizen_estate/widgets/card.dart';
 import 'package:kaizen_estate/widgets/scrolable_row.dart';
 
 class About extends StatelessWidget {
-  const About({Key? key}) : super(key: key);
+  final RentalDetails rentalDetails;
+
+  const About({Key? key, required this.rentalDetails, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +36,7 @@ class About extends StatelessWidget {
                           Container(
                             height: MediaQuery.of(context).size.height *0.4,
                             width: 300,
-                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),image: const DecorationImage(image: AssetImage('images/house1.jpg',),fit: BoxFit.cover),),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),image:  DecorationImage(image: AssetImage('${rentalDetails.imageUrl}',),fit: BoxFit.cover),),
 
                           ),
                           kSizedBoxW10,
@@ -79,21 +82,7 @@ class About extends StatelessWidget {
                       kSizedBoxH15,
                       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          GestureDetector(
-                            onTap:(){
-                              Navigator.push(context, PageRouteBuilder(
-                                  transitionDuration: const Duration(seconds: 2),
-                                  transitionsBuilder: (context, animation, secondaryAnimation, child){
-                                    final slide = Tween(begin: Offset(1,0),end: const Offset(0,0)).animate(animation);
-                                    return FadeTransition(opacity: animation,child: child,);
-                                  },
-
-                                  pageBuilder: (context, animation, secondaryAnimation,){
-                                    return const About();}));
-
-                            },
-
-                              child: cardIconText('Rooms', Icons.hotel)),
+                          cardIconText('Rooms', Icons.hotel),
                           cardIconText('Wifi', Icons.wifi),
                           cardIconText('Pool', Icons.pool),
                           cardIconText('Cafe', Icons.emoji_food_beverage),
@@ -120,10 +109,10 @@ class About extends StatelessWidget {
                               kSizedBoxW15,
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  Text('Joe Allwell',style: categories,),
+                                children:  [
+                                  Text('${rentalDetails.name}',style: categories,),
                                   kSizedBoxH5,
-                                  Text('Owner',),
+                                  const Text('Owner',),
 
                                 ],
                               ),

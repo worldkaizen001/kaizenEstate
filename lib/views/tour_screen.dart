@@ -9,6 +9,7 @@ class TourScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBody: true,
         body: Container(
           padding: kHorizontalPadding20,
           decoration: const BoxDecoration(image: DecorationImage(image: AssetImage("images/house2.jpg"),fit: BoxFit.cover)),

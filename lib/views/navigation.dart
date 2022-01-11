@@ -22,8 +22,9 @@ class _NavigationState extends State<Navigation> {
   final screens = [
 
     const Homepage(),
-    const About(),
+      // const About(),
      const TourScreen(),
+    const TourScreen(),
   ];
 
 
@@ -37,30 +38,36 @@ class _NavigationState extends State<Navigation> {
       const Icon(Icons.settings,size: 25,),
     ];
 
-    return Scaffold(
-      body: screens[index],
-      extendBody: true,
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-           iconTheme: const IconThemeData(color: kWhite)
+    return SafeArea(
+      top: false,
+      child: Scaffold(
+        body: screens[index],
+        extendBody: true,
+        bottomNavigationBar: Theme(
+          data: Theme.of(context).copyWith(
+
+             iconTheme: const IconThemeData(color: kWhite)
+          ),
+          child: CurvedNavigationBar(
+            backgroundColor: Colors.white54,
+
+
+            key: navigationKey,
+            animationCurve: Curves.easeInOut,
+            animationDuration: const Duration(milliseconds: 300),
+            color: kDarkAsh ,
+            buttonBackgroundColor: kMain,
+
+            height: 60 ,
+              index: index,
+              onTap: (index) => setState(() => this.index = index),
+
+
+              items: items),
         ),
-        child: CurvedNavigationBar(
-
-          key: navigationKey,
-          animationCurve: Curves.easeInOut,
-          animationDuration: const Duration(milliseconds: 300),
-          color: kDarkAsh ,
-          buttonBackgroundColor: kMain,
-          backgroundColor: Colors.transparent ,
-          height: 60 ,
-            index: index,
-            onTap: (index) => setState(() => this.index = index),
 
 
-            items: items),
       ),
-      
-
     );
   }
 }
