@@ -33,39 +33,13 @@ class About extends StatelessWidget {
 
                       Row(
                         children: [
-                          Container(
-                            height: MediaQuery.of(context).size.height *0.4,
-                            width: 300,
-                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),image:  DecorationImage(image: AssetImage('${rentalDetails.imageUrl}',),fit: BoxFit.cover),),
-
-                          ),
+                          largeImages(context, 'house1'),
                           kSizedBoxW10,
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-
-                            height: MediaQuery.of(context).size.height *0.4,
-                            width: 300,
-                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),image: const DecorationImage(image: AssetImage('images/house2.jpg',),fit: BoxFit.cover),),
-
-                          ),
+                          largeImages(context, 'house2'),
                           kSizedBoxW10,
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-
-                            height: MediaQuery.of(context).size.height *0.4,
-                            width: 300,
-                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),image: const DecorationImage(image: AssetImage('images/house3.jpg',),fit: BoxFit.cover),),
-
-                          ),
+                          largeImages(context, 'house3'),
                           kSizedBoxW10,
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-
-                            height: MediaQuery.of(context).size.height *0.4,
-                            width: 300,
-                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),image: const DecorationImage(image: AssetImage('images/house4.jpg',),fit: BoxFit.cover),),
-
-                          ),
+                          largeImages(context, 'house4'),
 
                         ],
                       )
@@ -89,9 +63,7 @@ class About extends StatelessWidget {
                         ],
                       ),
                       kSizedBoxH20,
-                       GestureDetector(onTap:(){
-
-                       },child: Text('Description', style: categories,)),
+                       const Text('Description', style: categories,),
                       kSizedBoxH10,
                       const Text('Simple house with modern architecture and cool interior located at prime location. Take a virtual tour and discover it from inside.', ),
                       const SizedBox(
@@ -150,6 +122,7 @@ class About extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
 
+
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 onSurface: kMain,
@@ -177,15 +150,16 @@ class About extends StatelessWidget {
                               },
                               child:  const Text(' Live Tour', style:  TextStyle(color: kMain,fontSize: 15,fontWeight: FontWeight.w700),),
                             ),
+
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 onSurface: kWhite,
                                 onPrimary: kDarkAsh,
                                 primary: kMain,
-                                padding: EdgeInsets.symmetric(horizontal: 53,vertical: 20),
+                                padding: const EdgeInsets.symmetric(horizontal: 53,vertical: 20),
 
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(23),
-                                  side:  BorderSide(color: kMain, width: 1),
+                                  side:  const BorderSide(color: kMain, width: 1),
                                 ),
 
                               ),
@@ -204,8 +178,11 @@ class About extends StatelessWidget {
                               },
                               child:  const Text(' Rent Now', style:  TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w700),),
                             ),
+
                           ],
                         ),
+
+
 
                     ],
                   ),

@@ -83,6 +83,15 @@ Widget cardAvatar() {
   );
 }
 
+Widget largeImages(context, imageUrl){
+  return Container(
+    height: MediaQuery.of(context).size.height *0.4,
+    width: 300,
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),image:  DecorationImage(image:  AssetImage('images/$imageUrl.jpg',),fit: BoxFit.cover),),
+
+  );
+}
+
 Widget cardColumn(images) {
   return Container(
     height: 60,

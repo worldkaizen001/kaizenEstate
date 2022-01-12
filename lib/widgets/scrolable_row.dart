@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kaizen_estate/constant/colors.dart';
+import 'package:kaizen_estate/views/tour_screen.dart';
 
 Widget scrollableRow (){
   return SizedBox(
@@ -18,7 +19,7 @@ Widget scrollableRow (){
 
   );
 }
-Widget scrollableRowMat (colour, text, border){
+Widget scrollableRowMat (context,colour, text, border){
   return SizedBox(
     height: 55,
     child: ElevatedButton(
@@ -35,7 +36,17 @@ Widget scrollableRowMat (colour, text, border){
           ),
 
       ),
-      onPressed: (){},
+      onPressed: (){
+        Navigator.push(context, PageRouteBuilder(
+            transitionDuration: const Duration(seconds: 2),
+            transitionsBuilder: (context, animation, secondaryAnimation, child){
+              final slide = Tween(begin: const Offset(1,0),end: const Offset(0,0)).animate(animation);
+              return FadeTransition(opacity: animation,child: child,);
+            },
+
+            pageBuilder: (context, animation, secondaryAnimation,){
+              return const TourScreen();}));
+      },
       child:  Text(' $text', style: const TextStyle(color: kGrey),),
     ),
   );

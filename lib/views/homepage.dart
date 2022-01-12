@@ -4,6 +4,7 @@ import 'package:kaizen_estate/constant/sizedbox.dart';
 import 'package:kaizen_estate/constant/textstyles.dart';
 
 import 'package:kaizen_estate/views/about.dart';
+import 'package:kaizen_estate/views/tour_screen.dart';
 import 'package:kaizen_estate/widgets/card.dart';
 import 'package:kaizen_estate/widgets/scrolable_row.dart';
 import 'package:kaizen_estate/widgets/searchfield.dart';
@@ -17,7 +18,9 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+
       child: Scaffold(
+
         extendBody: true,
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
@@ -68,13 +71,13 @@ class Homepage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          scrollableRowMat(kMain, 'All', kMain),
+                          scrollableRowMat(context,kMain, 'All', kMain),
                           kSizedBoxW10,
-                          scrollableRowMat(Colors.white, 'Apartment', kGrey),
+                          scrollableRowMat(context,Colors.white, 'Apartment', kGrey),
                           kSizedBoxW10,
-                          scrollableRowMat(Colors.white, 'Apartment', kGrey),
+                          scrollableRowMat(context,Colors.white, 'Hostels', kGrey),
                           kSizedBoxW10,
-                          scrollableRowMat(Colors.white, 'Apartment', kGrey),
+                          scrollableRowMat(context,Colors.white, 'Serviced Apartment', kGrey),
                           kSizedBoxW10,
                         ],
                       ),
