@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kaizen_estate/views/about.dart';
 import 'package:kaizen_estate/views/homepage.dart';
 import 'package:kaizen_estate/views/navigation.dart';
+import 'package:kaizen_estate/views/settings.dart';
 import 'package:kaizen_estate/views/tour_screen.dart';
 import 'package:kaizen_estate/views/video_call.dart';
 

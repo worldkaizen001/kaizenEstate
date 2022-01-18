@@ -5,7 +5,7 @@ Widget searchField (){
   return SizedBox(
 
     width: double.infinity,
-    child: TextFormField(
+    child: TextField(
       decoration:  InputDecoration(
         fillColor: kWhite,
         filled: true,
@@ -15,9 +15,11 @@ Widget searchField (){
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: kWhite),
+          borderSide: const BorderSide(color: kMain),
         ),
-        hintText: 'Search',
+
+        labelText: 'Search',
+
         hintStyle: const TextStyle(color: kBlack, fontSize: 20, fontWeight: FontWeight.w600),
         prefixIcon:  const Icon(Icons.search,color: kBlack,),
         suffixIcon: SizedBox(

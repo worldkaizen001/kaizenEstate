@@ -3,6 +3,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:kaizen_estate/constant/colors.dart';
 import 'package:kaizen_estate/views/about.dart';
 import 'package:kaizen_estate/views/homepage.dart';
+import 'package:kaizen_estate/views/settings.dart';
 import 'package:kaizen_estate/views/tour_screen.dart';
 
 
@@ -24,7 +25,7 @@ class _NavigationState extends State<Navigation> {
     const Homepage(),
       // const About(),
      const TourScreen(),
-    const TourScreen(),
+    const Settings(),
   ];
 
 
